@@ -1,0 +1,50 @@
+﻿@model Candidate
+
+<div class="display-6">
+    Apply
+</div>
+
+<form asp-action="Apply" method="post">
+    <div class="text-danger" asp-validation-summary="All"></div>
+
+    <div class="form-group my-2">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" type="text" class="form-control" />
+    </div>
+    <div class="form-group my-2">
+        <label asp-for="FirstName"></label>
+        <input asp-for="FirstName" type="text" class="form-control" />
+    </div>
+    <div class="form-group my-2">
+        <label asp-for="LastName"></label>
+        <input asp-for="LastName" type="text" class="form-control" />
+    </div>
+    <div class="form-group my-2">
+        <label asp-for="Age"></label>
+        <select asp-for="Age" class="form-control">
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+        </select>
+    </div>
+
+    <div class="form-group my-2">
+        <label asp-for="SelectedCourse">Select One Course</label>
+        <select asp-for="SelectedCourse" class="form-control">
+            <option value="Asp.Net Core Mvc">Asp.Net Core Mvc</option>
+            <option value="Csharp">C#</option>
+            <option value="Asp.Net Core Web APi">Asp.Net Core Web Api</option>
+            <option value="Java">Java</option>
+            <option value="Javascript">Javascript</option>
+            <option value="Blazor">Blazor</option>
+        </select>
+    </div>
+
+    <div>
+        <button class="btn btn-primary">Apply</button>
+        <a asp-controller="Home" asp-action="Index" class="btn btn-warning">Home</a>
+    </div>
+</form>
